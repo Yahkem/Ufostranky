@@ -1,0 +1,581 @@
+﻿/***** Layout *****/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html, body {
+    height: 100%;
+    color: silver;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+body { 
+    background-image: url("../Images/ufoattack.jpg");
+    background-position: top center; 
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+/* Menu */
+
+#mainMenu {
+    margin: 0 auto;
+    width: 1280px;
+    clear:both;
+}
+
+#mainMenu ul {
+    float: left;
+    width: 100%;
+    list-style-type: none;
+}
+
+#mainMenu ul li {
+    float: left;
+    width: 8em;
+    height: 8em;
+    text-decoration: none;
+    display: inline;
+}
+
+.menuDiv {
+    width: 6.5em;
+    height: 6.5em;
+    margin: 0.5em 0.5em;
+    border: 5px solid rgba(0, 0, 0, 0);
+}
+
+#home {
+    background-color: black;
+    border-radius: 50%;
+    text-align: center;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+#home:hover {
+    background-color: white;
+    -webkit-animation: kolecko 2s linear 1s infinite;
+    animation: kolecko 2s linear 1s infinite;
+}
+
+#spanInHome {
+    margin: 0px auto;
+    height: 1px;
+    line-height: 4.7em;
+    text-transform: uppercase;
+    font-family: Verdana, Tahoma, sans-serif;
+    letter-spacing: 0.25em;
+    font-size: 1.4em;
+ 
+}
+
+#spanInHome a {
+    color: white;
+    display: block;
+    border-radius: 50%;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: 1s;
+}
+
+.menuSpan a:link, .menuSpan a:visited {
+    text-decoration: none;
+}
+
+#spanInHome a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+
+#guestbook {
+    width: 0;
+    height: 0;
+    border-top: 100px solid rgb(230, 230, 230);
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    position: absolute;
+    margin-top: 15px;
+}
+
+#guestbook:hover {
+    -webkit-animation: triangleRotation 4s linear infinite;
+    animation: triangleRotation 4s linear infinite;
+}
+
+#spanInGuestDiv {
+    position: absolute;
+    left: -50px;
+    top: -100px;
+}
+
+#spanInGuestDiv a {
+    color: black;
+    display: block;
+    height: 110px;
+    min-width: 100px;
+    line-height: 1em;
+    font-size: 1.1em;
+}
+
+#spanInGuestDiv a:hover {
+    -webkit-animation: upDown 4s linear infinite;
+    animation: upDown 4s linear infinite;
+}
+
+#clearer {
+    clear: both; 
+    height: 50px;
+}
+
+/* Not menu */
+
+#mainSection {
+    min-height: 96%;
+    height: auto !important; 
+    height: 96%;
+}
+
+#content {
+    min-height: 150px;
+    width: 960px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 15px white;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black !important;
+    font-size: 1.1em;
+    padding: 15px 15px;
+}
+
+#content:hover {
+    -webkit-animation: contentShadowing 3s infinite;
+    animation: contentShadowing 3s infinite;
+}
+
+#mainFooter {
+    height: 3%;
+    padding: 0 25px;
+}
+
+/* Guestbook */
+
+#guestsTable {
+    margin: 30px 0 50px 0;
+}
+
+/* Square shit */
+
+#squaresAndShit {
+    position: relative;
+}
+
+.absoluteSquare {
+    position: absolute;
+    width: 1.625em;
+    height: 1.625em;
+    border: 1px solid black;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(to bottom right, white, silver, black);
+    background: -moz-linear-gradient(to bottom right, white, silver, black);
+    background: -o-linear-gradient(to bottom right, white, silver, black);
+    background: linear-gradient(to bottom right, white, silver, black);
+    box-sizing: border-box;
+}
+
+#s1 {
+    left: 1.625em;
+}
+
+#s2 {
+    left: 3.25em;
+}
+
+#s3 {
+    left: 4.875em;
+}
+
+#s4 {
+    top: 1.625em;
+}
+
+#s5 {
+    top: 1.625em;
+    left: 1.625em;
+}
+
+#s6 {
+    top: 1.625em;
+    left: 3.25em;
+}
+
+#s7 {
+    top: 1.625em;
+    left: 4.875em;
+}
+
+#s8 {
+    top: 3.25em;
+}
+
+#s9 {
+    top: 3.25em;
+    left: 1.625em;
+}
+
+#s10 {
+    top: 3.25em;
+    left: 3.25em;
+}
+
+#s11 {
+    top: 3.25em;
+    left: 4.875em;
+}
+
+#s12 {
+    top: 4.875em;
+}
+
+#s13 {
+    top: 4.875em;
+    left: 1.625em;
+}
+
+#s14 {
+    top: 4.875em;
+    left: 3.25em;
+}
+
+#s15 {
+    top: 4.875em;
+    left: 4.875em;
+}
+
+#linkSq {
+    display: block;
+    position: absolute;
+    width: 6.5em;
+    height: 6.5em;
+    left: -0.1em;
+    top: -0.1em;
+}
+
+
+#mainSquareShit {
+    margin: 20px auto;
+    border: 1px double black;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    width: 800px;
+    height: 800px;
+    position: relative;
+}
+
+.field {
+    position: absolute;
+    height: 196px;
+    width:  196px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px grey;
+    z-index: 1;
+    font-family: ufont;
+    line-height: 1.5em;
+    font-size: 7em;
+    text-align: center;
+    background: -webkit-linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+    background: -moz-linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+    background: -o-linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+    background: linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+}
+
+#mainSquareShit table {
+    border-collapse: collapse;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    -webkit-animation: clickableAnim 2s linear infinite;
+    -moz-animation: clickableAnim 3s linear infinite;
+    -o-animation: clickableAnim 3s linear infinite;
+    animation: clickableAnim 3s linear infinite;
+}
+
+/* all that horseshit */
+
+.f-1-1 {
+    left: 2px;
+    top: 2px;
+}
+
+.f-1-2 {
+    left: 202px;
+    top: 2px;
+}
+
+.f-1-3 {
+    left: 402px;
+    top: 2px;    
+}
+
+.f-1-4 {
+    left: 602px;
+    top: 2px;
+}
+
+.f-2-1 {
+    top: 202px;
+    left: 2px;
+}
+
+.f-2-2 {
+    left: 202px;
+    top: 202px;
+}
+
+.f-2-3 {
+    left: 402px;
+    top: 202px;
+}
+
+.f-2-4 {
+    left: 602px;
+    top: 202px;
+}
+
+.f-3-1 {
+    top: 402px;
+    left: 2px;
+}
+
+.f-3-2 {
+    left: 202px;
+    top: 402px;
+}
+
+.f-3-3 {
+    left: 402px;
+    top: 402px;
+}
+
+.f-3-4 {
+    left: 602px;
+    top: 402px;
+}
+
+.f-4-1 {
+    top: 602px;
+    left: 2px;
+}
+
+.f-4-2 {
+    left: 202px;
+    top: 602px;
+}
+
+.f-4-3 {
+    left: 402px;
+    top: 602px;
+}
+
+.f-4-4 {
+    left: 602px;
+    top: 602px;
+}
+
+/* Classes */
+
+.clear {
+    clear: both;
+}
+
+.contentHeading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.relative {
+    position: relative;
+}
+
+.gbCreated {
+    float: right;
+    font-size: 0.5em;
+}
+
+.author {
+    font-weight: bold;
+}
+
+
+.hidingArrow {
+    float: right;
+    cursor: pointer;
+}
+
+.gbText {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.gbPost {
+    width: 100%;
+    min-height: 20px;
+}
+
+.blackLine {
+    margin: 10px auto;
+    border-color: black;
+}
+
+/* Animations & rules */
+
+@-webkit-keyframes kolecko {
+    0% {border-left: 5px solid black;}
+    25% {border-top: 5px solid black; border-left: 5px solid rgba(0, 0, 0, 0);}
+    50% {border-right: 5px solid black; border-top: 5px solid rgba(0, 0, 0, 0);}
+    75% {border-bottom: 5px solid black; border-right: 5px solid rgba(0, 0, 0, 0);}
+    100% {border-left: 5px solid black; border-bottom: 5px solid rgba(0, 0, 0, 0);}
+}
+@-moz-keyframes kolecko {
+    0% {border-left: 5px solid black;}
+    25% {border-top: 5px solid black; border-left: 5px solid rgba(0, 0, 0, 0);}
+    50% {border-right: 5px solid black; border-top: 5px solid rgba(0, 0, 0, 0);}
+    75% {border-bottom: 5px solid black; border-right: 5px solid rgba(0, 0, 0, 0);}
+    100% {border-left: 5px solid black; border-bottom: 5px solid rgba(0, 0, 0, 0);}
+}
+@-o-keyframes kolecko {
+    0% {border-left: 5px solid black;}
+    25% {border-top: 5px solid black; border-left: 5px solid rgba(0, 0, 0, 0);}
+    50% {border-right: 5px solid black; border-top: 5px solid rgba(0, 0, 0, 0);}
+    75% {border-bottom: 5px solid black; border-right: 5px solid rgba(0, 0, 0, 0);}
+    100% {border-left: 5px solid black; border-bottom: 5px solid rgba(0, 0, 0, 0);}
+}
+@keyframes kolecko {
+    0% {border-left: 5px solid black;}
+    25% {border-top: 5px solid black; border-left: 5px solid rgba(0, 0, 0, 0);}
+    50% {border-right: 5px solid black; border-top: 5px solid rgba(0, 0, 0, 0);}
+    75% {border-bottom: 5px solid black; border-right: 5px solid rgba(0, 0, 0, 0);}
+    100% {border-left: 5px solid black; border-bottom: 5px solid rgba(0, 0, 0, 0);}
+}
+
+@-webkit-keyframes contentShadowing {
+    0% {box-shadow: 0 0 15px white;}
+    50% {box-shadow: 0 0 35px white;}
+    100% {box-shadow: 0 0 15px white;}
+}
+@-moz-keyframes contentShadowing {
+    0% {box-shadow: 0 0 15px white;}
+    50% {box-shadow: 0 0 35px white;}
+    100% {box-shadow: 0 0 15px white;}
+}
+@-o-keyframes contentShadowing {
+    0% {box-shadow: 0 0 15px white;}
+    50% {box-shadow: 0 0 35px white;}
+    100% {box-shadow: 0 0 15px white;}
+}
+@keyframes contentShadowing {
+    0% {box-shadow: 0 0 15px white;}
+    50% {box-shadow: 0 0 35px white;}
+    100% {box-shadow: 0 0 15px white;}
+}
+
+@-webkit-keyframes upDown {
+    0% { line-height: 1em; }
+    50% { line-height: 11em; color: white; }
+    100% { line-height: 1em; color: black; }
+}
+@-moz-keyframes upDown {
+    0% { line-height: 1em; }
+    50% { line-height: 11em; color: white; }
+    100% { line-height: 1em; color: black; }
+}
+@-o-keyframes upDown {
+    0% { line-height: 1em; }
+    50% { line-height: 11em; color: white; }
+    100% { line-height: 1em; color: black; }
+}
+@keyframes upDown {
+    0% { line-height: 1em; }
+    50% { line-height: 11em; color: white; }
+    100% { line-height: 1em; color: black; }
+}
+
+@-webkit-keyframes triangleRotation {
+    35% { -webkit-transform: rotateY(0deg); }
+    50% { -webkit-transform: rotateY(720deg); border-top: 100px solid black;}
+    85% { -webkit-transform: rotateY(720deg); }
+    100% { -webkit-transform: rotateY(0deg);}
+}
+@-moz-keyframes triangleRotation {
+    35% { -moz-transform: rotateY(0deg); }
+    50% { -moz-transform: rotateY(720deg); border-top: 100px solid black;}
+    85% { -moz-transform: rotateY(720deg); }
+    100% { -moz-transform: rotateY(0deg);}
+}
+@-o-keyframes triangleRotation {
+    35% { -o-transform: rotateY(0deg); }
+    50% { -o-transform: rotateY(720deg); border-top: 100px solid black;}
+    85% { -o-transform: rotateY(720deg); }
+    100% { -o-transform: rotateY(0deg);}
+}
+@keyframes triangleRotation {
+    35% { transform: rotateY(0deg); }
+    50% { transform: rotateY(720deg); border-top: 100px solid black;}
+    85% { transform: rotateY(720deg); }
+    100% { transform: rotateY(0deg);}
+}
+
+
+@font-face {
+    font-family: ufont;
+    src: url(../fonts/Backslash.ttf);
+}
+
+@-webkit-keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+@-moz-keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+@-o-keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+@keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+

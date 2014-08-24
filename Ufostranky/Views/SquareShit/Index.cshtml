@@ -1,0 +1,54 @@
+﻿@model Ufostranky.Models.SquareShit
+
+@{
+    ViewBag.Title = "HraCoNevimJakSeJmenuje";
+}
+
+<div id="mainSquareShit">
+    <div class="field f-1-2" data-field="f-1-2">@Model.Numbers[0]</div>
+    <div class="field f-1-3" data-field="f-1-3">@Model.Numbers[1]</div>
+    <div class="field f-1-4" data-field="f-1-4">@Model.Numbers[2]</div>
+    <div class="field f-2-1" data-field="f-2-1">@Model.Numbers[3]</div>
+    <div class="field f-2-2" data-field="f-2-2">@Model.Numbers[4]</div>
+    <div class="field f-2-3" data-field="f-2-3">@Model.Numbers[5]</div>
+    <div class="field f-2-4" data-field="f-2-4">@Model.Numbers[6]</div>
+    <div class="field f-3-1" data-field="f-3-1">@Model.Numbers[7]</div>
+    <div class="field f-3-2" data-field="f-3-2">@Model.Numbers[8]</div>
+    <div class="field f-3-3" data-field="f-3-3">@Model.Numbers[9]</div>
+    <div class="field f-3-4" data-field="f-3-4">@Model.Numbers[10]</div>
+    <div class="field f-4-1" data-field="f-4-1">@Model.Numbers[11]</div>
+    <div class="field f-4-2" data-field="f-4-2">@Model.Numbers[12]</div>
+    <div class="field f-4-3" data-field="f-4-3">@Model.Numbers[13]</div>
+    <div class="field f-4-4" data-field="f-4-4">@Model.Numbers[14]</div>
+
+    <table>
+        <tr>
+            <td id="c-1-1" class="square empty"></td>
+            <td id="c-1-2" class="square"></td>
+            <td id="c-1-3" class="square"></td>
+            <td id="c-1-4" class="square"></td>
+        </tr>
+        <tr>
+            <td id="c-2-1" class="square"></td>
+            <td id="c-2-2" class="square"></td>
+            <td id="c-2-3" class="square"></td>
+            <td id="c-2-4" class="square"></td>
+        </tr>
+        <tr>
+            <td id="c-3-1" class="square "></td>
+            <td id="c-3-2" class="square"></td>
+            <td id="c-3-3" class="square"></td>
+            <td id="c-3-4" class="square"></td>
+        </tr>
+        <tr>
+            <td id="c-4-1" class="square"></td>
+            <td id="c-4-2" class="square"></td>
+            <td id="c-4-3" class="square"></td>
+            <td id="c-4-4" class="square"></td>
+        </tr>
+    </table>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/squareStuff.js")
+}

@@ -1,0 +1,27 @@
+﻿@model Ufostranky.Models.Guestbook
+
+<div>
+    @Html.LabelFor(model => model.Author)
+    <div>
+        @Html.EditorFor(model => model.Author)
+        @Html.ValidationMessageFor(model => model.Author, "")
+    </div>
+</div>
+
+<div>
+    @Html.LabelFor(model => model.Text)
+    <div>
+        @Html.TextAreaFor(model => model.Text)
+        @Html.ValidationMessageFor(model => model.Text)
+    </div>
+</div>
+
+<div>
+    <div>
+        <input type="submit" value="Přidej svůj výblitek" />
+    </div>
+</div>
+
+
+
+
