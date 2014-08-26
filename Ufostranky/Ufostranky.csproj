@@ -176,6 +176,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Audio\Fireworks.mp3" />
     <Content Include="Content\guestbook.css" />
     <Content Include="Content\squareStuff.css" />
     <Content Include="Images\favicon.ico" />

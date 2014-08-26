@@ -11,23 +11,34 @@ namespace Ufostranky.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        private void DecodeStuff(Guestbook gb)
+        {
+            gb.Text = Server.HtmlDecode(gb.Text);
+            gb.Author = Server.HtmlDecode(gb.Author);
+        }
         // GET: Guestbook
         public ActionResult Index()
         {
             List<Guestbook> list = db.Guestbook.ToList();
             list.Reverse();
+            list.ForEach(DecodeStuff);
             return View(list);
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include = "Id,Author,Text")] Guestbook guestbook)
         {
             if (ModelState.IsValid)
             {
+                guestbook.Text = Server.HtmlEncode(guestbook.Text);
                 guestbook.Created = DateTime.Now;
                 if (guestbook.Author == null)
                     guestbook.Author = "Smradlavý anonym";
+                else
+                    guestbook.Author = Server.HtmlEncode(guestbook.Author);
+
                 db.Guestbook.Add(guestbook);
                 db.SaveChanges();
             }

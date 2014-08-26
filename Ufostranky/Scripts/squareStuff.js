@@ -1,13 +1,12 @@
 ﻿$(document).ready(function () {
 
     // Game----------------------------------------------------------------------------------
-    // fns
     var getCoords,
         addClickable,
         removeClickable,
         changeEmpty,
         gameWon,
-        animationSpeed = 250;
+        animationSpeed = 300;
 
     var moving = false;
 
@@ -69,7 +68,7 @@
             $('.f-3-1').text() == 8 && $('.f-3-2').text() == 9 && $('.f-3-3').text() == 10 && $('.f-3-4').text() == 11 &&
             $('.f-4-1').text() == 12 && $('.f-4-2').text() == 13 && $('.f-4-3').text() == 14 && $('.f-4-4').text() == 15))
         {
-            alert('Na co čumíš? To chceš čokoládu? Jdi radši zametat, odporný slizoune!');
+            document.getElementById('victorySound').play();
         }
     };
 
@@ -144,7 +143,8 @@
 
     // Settings------------------------------------------------------------------------------------
 
-    var rotating = false;
+    var rotating = false,
+        animationPrefixes = ['-webkit-', '-moz-', '-o-', ''];
 
     $('#settingsWheel').on('click', function () {
         var t = $(this),
@@ -161,7 +161,7 @@
                 settings.css({ border: 0, 'border-top': border });
                 settings.animate({ width: 800 }, speed, 'linear', function () {
                     settings.css({ border: border });
-                    settings.animate({ height: 200 }, speed, 'linear', function () {
+                    settings.animate({ height: 130 }, speed, 'linear', function () {
                         $('.hideable').fadeIn(speed);
                         rotating = false;
                     });
@@ -181,13 +181,29 @@
         }
     });
 
-    $('#speedInput').on('change', function () {
+    $('#speedInput').on('focusout', function () {
         var value = $(this).val();
 
         if (value == '' || value == null || value < 0) {
             alert('Zadej kladné číslo, nebo ti ukopnu hlavu!');
+            $(this).focus();
         } else {
             animationSpeed = parseInt(value);
         }
-    })
+    });
+
+    $('#color').on('change', function () {
+        var color = $(this).val(),
+            result = '';
+
+        if ($('#colorChange').length == 0) {
+            $('<style id="colorChange"></style>').appendTo('body');
+        }
+
+        for (var i = 0; i < 4; ++i) {
+            result += '@' + animationPrefixes[i] + 'keyframes clickableAnim { 50% { background-color: ' + color + '; box-shadow: 0 0 15px black;}}';
+        }
+
+        $('#colorChange').html(result)
+    });
 });

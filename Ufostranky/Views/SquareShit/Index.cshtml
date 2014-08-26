@@ -5,7 +5,6 @@
 }
 
 <div id="mainSquareShit">
-
     @for (byte i = 0; i < 15; ++i )
     {
         <div class="field @Model.Positions[i]" data-field="@Model.Positions[i]">@Model.Numbers[i]</div>
@@ -27,13 +26,29 @@
             </tr>
         }
     </table>
+    <audio id="victorySound">
+        <source src="~/Audio/Fireworks.mp3" type="audio/mp3" />
+        <embed height="0" width="0" src="~/Audio/Fireworks.mp3" />
+    </audio>
 </div>
-    <fieldset id="settings">
-        <legend><img id="settingsWheel" src="~/Images/ozub.png" alt="Settings" width="40" height="40" /></legend>
-        <label class="hideable" for="speedInput">Rychlost pohybu dlaždic: </label>
-        <input id="speedInput" class="hideable" type="number" value="250" />
-        <span class="hideable">ms</span>
-    </fieldset>
+
+<fieldset id="settings">
+    <legend><img id="settingsWheel" src="~/Images/ozub.png" alt="Settings" width="40" height="40" /></legend>
+    <table class ="hideable">
+        <tr>
+            <th><label for="speedInput">Rychlost pohybu dlaždic: </label></th>
+            <td>
+                <input id="speedInput" type="number" value="250" />
+                <span>ms</span>
+            </td>
+        </tr>
+        <tr>
+            <th><label>Barva: </label></th>
+            <td><input id="color" type="color"/></td>
+        </tr>
+    </table>
+</fieldset>
+
 @section Scripts{
     @Scripts.Render("~/Scripts/squareStuff.js")
 }
