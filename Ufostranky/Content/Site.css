@@ -1,4 +1,4 @@
-﻿/***** Layout *****/
+﻿/***** Layout & elementy *****/
 
 *{
     margin: 0;
@@ -17,6 +17,13 @@ body {
     background-position: top center; 
     background-repeat: no-repeat;
     background-color: black;
+}
+
+input, textarea {
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 /* Menu */
@@ -92,7 +99,6 @@ body {
     color: black;
 }
 
-
 #guestbook {
     width: 0;
     height: 0;
@@ -127,50 +133,6 @@ body {
     -webkit-animation: upDown 4s linear infinite;
     animation: upDown 4s linear infinite;
 }
-
-#clearer {
-    clear: both; 
-    height: 50px;
-}
-
-/* Not menu */
-
-#mainSection {
-    min-height: 96%;
-    height: auto !important; 
-    height: 96%;
-}
-
-#content {
-    min-height: 150px;
-    width: 960px;
-    margin: 0 auto;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 15px white;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: black !important;
-    font-size: 1.1em;
-    padding: 15px 15px;
-}
-
-#content:hover {
-    -webkit-animation: contentShadowing 3s infinite;
-    animation: contentShadowing 3s infinite;
-}
-
-#mainFooter {
-    height: 3%;
-    padding: 0 25px;
-}
-
-/* Guestbook */
-
-#guestsTable {
-    margin: 30px 0 50px 0;
-}
-
-/* Square shit */
 
 #squaresAndShit {
     position: relative;
@@ -267,153 +229,40 @@ body {
     top: -0.1em;
 }
 
-
-#mainSquareShit {
-    margin: 20px auto;
-    border: 1px double black;
-    box-shadow: 0px 0px 5px black;
-    border-radius: 10px;
-    width: 800px;
-    height: 800px;
-    position: relative;
+#clearer {
+    clear: both; 
+    height: 50px;
 }
 
-.field {
-    position: absolute;
-    height: 196px;
-    width:  196px;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 0 15px grey;
-    z-index: 1;
-    font-family: ufont;
-    line-height: 1.5em;
-    font-size: 7em;
-    text-align: center;
-    background: -webkit-linear-gradient(
-		rgba(255,255,255,0.5), 
-        rgba(200,200,200,0.5),
-		rgba(0,0,0,0.5)
-	);
-    background: -moz-linear-gradient(
-		rgba(255,255,255,0.5), 
-        rgba(200,200,200,0.5),
-		rgba(0,0,0,0.5)
-	);
-    background: -o-linear-gradient(
-		rgba(255,255,255,0.5), 
-        rgba(200,200,200,0.5),
-		rgba(0,0,0,0.5)
-	);
-    background: linear-gradient(
-		rgba(255,255,255,0.5), 
-        rgba(200,200,200,0.5),
-		rgba(0,0,0,0.5)
-	);
+/* Not menu */
+
+#mainSection {
+    min-height: 96%;
+    height: auto !important; 
+    height: 96%;
 }
 
-#mainSquareShit table {
-    border-collapse: collapse;
+#content {
+    min-height: 150px;
+    width: 960px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 15px white;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black !important;
+    font-size: 1.1em;
+    padding: 15px 15px;
 }
 
-.square {
-    width: 200px;
-    height: 200px;
-    text-align: center;
+#content:hover {
+    -webkit-animation: contentShadowing 3s infinite;
+    animation: contentShadowing 3s infinite;
 }
 
-.clickable {
-    cursor: pointer;
-}
-
-.clickable:hover {
-    -webkit-animation: clickableAnim 2s linear infinite;
-    -moz-animation: clickableAnim 3s linear infinite;
-    -o-animation: clickableAnim 3s linear infinite;
-    animation: clickableAnim 3s linear infinite;
-}
-
-/* all that horseshit */
-
-.f-1-1 {
-    left: 2px;
-    top: 2px;
-}
-
-.f-1-2 {
-    left: 202px;
-    top: 2px;
-}
-
-.f-1-3 {
-    left: 402px;
-    top: 2px;    
-}
-
-.f-1-4 {
-    left: 602px;
-    top: 2px;
-}
-
-.f-2-1 {
-    top: 202px;
-    left: 2px;
-}
-
-.f-2-2 {
-    left: 202px;
-    top: 202px;
-}
-
-.f-2-3 {
-    left: 402px;
-    top: 202px;
-}
-
-.f-2-4 {
-    left: 602px;
-    top: 202px;
-}
-
-.f-3-1 {
-    top: 402px;
-    left: 2px;
-}
-
-.f-3-2 {
-    left: 202px;
-    top: 402px;
-}
-
-.f-3-3 {
-    left: 402px;
-    top: 402px;
-}
-
-.f-3-4 {
-    left: 602px;
-    top: 402px;
-}
-
-.f-4-1 {
-    top: 602px;
-    left: 2px;
-}
-
-.f-4-2 {
-    left: 202px;
-    top: 602px;
-}
-
-.f-4-3 {
-    left: 402px;
-    top: 602px;
-}
-
-.f-4-4 {
-    left: 602px;
-    top: 602px;
+#mainFooter {
+    height: 3%;
+    padding: 0 25px;
 }
 
 /* Classes */
@@ -427,39 +276,14 @@ body {
     margin-bottom: 10px;
 }
 
-
 .relative {
     position: relative;
 }
 
-.gbCreated {
-    float: right;
-    font-size: 0.5em;
-}
-
-.author {
-    font-weight: bold;
-}
-
-
+/* zatim jenom v guestbook */
 .hidingArrow {
     float: right;
     cursor: pointer;
-}
-
-.gbText {
-    margin-top: 15px;
-    font-size: 0.9em;
-}
-
-.gbPost {
-    width: 100%;
-    min-height: 20px;
-}
-
-.blackLine {
-    margin: 10px auto;
-    border-color: black;
 }
 
 /* Animations & rules */
@@ -559,23 +383,3 @@ body {
     85% { transform: rotateY(720deg); }
     100% { transform: rotateY(0deg);}
 }
-
-
-@font-face {
-    font-family: ufont;
-    src: url(../fonts/Backslash.ttf);
-}
-
-@-webkit-keyframes clickableAnim {
-    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
-}
-@-moz-keyframes clickableAnim {
-    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
-}
-@-o-keyframes clickableAnim {
-    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
-}
-@keyframes clickableAnim {
-    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
-}
-

@@ -176,6 +176,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\guestbook.css" />
+    <Content Include="Content\squareStuff.css" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

@@ -1,11 +1,13 @@
 ﻿$(document).ready(function () {
 
+    // Game----------------------------------------------------------------------------------
     // fns
     var getCoords,
         addClickable,
         removeClickable,
         changeEmpty,
-        gameWon;
+        gameWon,
+        animationSpeed = 250;
 
     var moving = false;
 
@@ -124,7 +126,7 @@
             }
 
             
-            t.animate(direction, 250, 'linear', function () {
+            t.animate(direction, animationSpeed, 'linear', function () {
                 var dataClass = 'f-' + row.toString() + '-' + col.toString();
                 t.removeClass(data);
                 t.addClass(dataClass);
@@ -139,4 +141,53 @@
     });
 
     addClickable();
+
+    // Settings------------------------------------------------------------------------------------
+
+    var rotating = false;
+
+    $('#settingsWheel').on('click', function () {
+        var t = $(this),
+            settings = $('#settings'),
+            speed = 500,
+            border = '1px solid black';
+
+        if (!rotating) {
+            rotating = true;
+
+            if (!t.hasClass('openedWheel')) {
+                t.removeClass('closedWheel');
+                t.addClass('openedWheel');
+                settings.css({ border: 0, 'border-top': border });
+                settings.animate({ width: 800 }, speed, 'linear', function () {
+                    settings.css({ border: border });
+                    settings.animate({ height: 200 }, speed, 'linear', function () {
+                        $('.hideable').fadeIn(speed);
+                        rotating = false;
+                    });
+                });
+            } else {
+                t.removeClass('openedWheel');
+                t.addClass('closedWheel');
+                $('.hideable').fadeOut(speed);
+                settings.animate({ height: 40 }, speed, 'linear', function () {
+                    settings.css({ border: 0, 'border-top': border });
+                    settings.animate({ width: 0 }, speed, 'linear');
+
+                    rotating = false;
+                });
+            }
+
+        }
+    });
+
+    $('#speedInput').on('change', function () {
+        var value = $(this).val();
+
+        if (value == '' || value == null || value < 0) {
+            alert('Zadej kladné číslo, nebo ti ukopnu hlavu!');
+        } else {
+            animationSpeed = parseInt(value);
+        }
+    })
 });

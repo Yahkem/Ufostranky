@@ -1,0 +1,27 @@
+﻿#guestsTable {
+    margin: 30px 0 50px 0;
+}
+
+.gbCreated {
+    float: right;
+    font-size: 0.5em;
+}
+
+.gbText {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.gbPost {
+    width: 100%;
+    min-height: 20px;
+}
+
+.blackLine {
+    margin: 10px auto;
+    border-color: black;
+}
+
+.author {
+    font-weight: bold;
+}

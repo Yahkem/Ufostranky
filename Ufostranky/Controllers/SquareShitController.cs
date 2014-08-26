@@ -9,7 +9,7 @@ namespace Ufostranky.Controllers
         public ActionResult Index()
         {
             SquareShit squares = new SquareShit();
-
+            squares.MakePositions();
             return View(squares);
         }
     }

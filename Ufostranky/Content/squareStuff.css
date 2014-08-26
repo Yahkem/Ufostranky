@@ -1,0 +1,236 @@
+﻿#mainSquareShit {
+    margin: 20px auto;
+    border: 1px double black;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+    width: 800px;
+    height: 800px;
+    position: relative;
+}
+
+.field {
+    position: absolute;
+    height: 196px;
+    width:  196px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px grey;
+    z-index: 1;
+    font-family: ufont;
+    line-height: 1.5em;
+    font-size: 7em;
+    text-align: center;
+    background: -webkit-linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+    background: -moz-linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+    background: -o-linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+    background: linear-gradient(
+		rgba(255,255,255,0.5), 
+        rgba(200,200,200,0.5),
+		rgba(0,0,0,0.5)
+	);
+}
+
+#mainSquareShit table {
+    border-collapse: collapse;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    -webkit-animation: clickableAnim 2s linear infinite;
+    -moz-animation: clickableAnim 3s linear infinite;
+    -o-animation: clickableAnim 3s linear infinite;
+    animation: clickableAnim 3s linear infinite;
+}
+
+/* all that horseshit */
+
+.f-1-1 {
+    left: 2px;
+    top: 2px;
+}
+
+.f-1-2 {
+    left: 202px;
+    top: 2px;
+}
+
+.f-1-3 {
+    left: 402px;
+    top: 2px;    
+}
+
+.f-1-4 {
+    left: 602px;
+    top: 2px;
+}
+
+.f-2-1 {
+    top: 202px;
+    left: 2px;
+}
+
+.f-2-2 {
+    left: 202px;
+    top: 202px;
+}
+
+.f-2-3 {
+    left: 402px;
+    top: 202px;
+}
+
+.f-2-4 {
+    left: 602px;
+    top: 202px;
+}
+
+.f-3-1 {
+    top: 402px;
+    left: 2px;
+}
+
+.f-3-2 {
+    left: 202px;
+    top: 402px;
+}
+
+.f-3-3 {
+    left: 402px;
+    top: 402px;
+}
+
+.f-3-4 {
+    left: 602px;
+    top: 402px;
+}
+
+.f-4-1 {
+    top: 602px;
+    left: 2px;
+}
+
+.f-4-2 {
+    left: 202px;
+    top: 602px;
+}
+
+.f-4-3 {
+    left: 402px;
+    top: 602px;
+}
+
+.f-4-4 {
+    left: 602px;
+    top: 602px;
+}
+
+@font-face {
+    font-family: ufont;
+    src: url(../fonts/Backslash.ttf);
+}
+
+@-webkit-keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+@-moz-keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+@-o-keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+@keyframes clickableAnim {
+    50% { background-color: rgba(0, 50, 100, 1); box-shadow: 0 0 15px black;}
+}
+
+/* settings */
+
+#settings {
+    margin: 0 auto;
+    width: 0px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    border: 0;
+    border-radius: 3px;
+}
+
+#settingsWheel {
+    cursor: pointer;
+} 
+
+.openedWheel {
+    -webkit-animation: rotateWheel 1s linear;
+    -moz-animation: rotateWheel 1s linear;
+    -o-animation: rotateWheel 1s linear;
+    animation: rotateWheel 1s linear;
+}
+
+.closedWheel {
+    -webkit-animation: rotateWheelBack 1s linear;
+    -moz-animation: rotateWheelBack 1s linear;
+    -o-animation: rotateWheelBack 1s linear;
+    animation: rotateWheelBack 1s linear;
+}
+
+.hideable {
+    display: none;
+}
+
+#speedInput {
+    width: 100px;
+    text-align: right;
+}
+
+@-webkit-keyframes rotateWheel {
+    100% { -webkit-transform: rotateZ(360deg); }
+}
+
+@-moz-keyframes rotateWheel {
+    100% { -moz-transform: rotateZ(360deg); }
+}
+
+@-o-keyframes rotateWheel {
+    100% { -o-transform: rotateZ(360deg); }
+}
+
+@keyframes rotateWheel {
+    100% { transform: rotateZ(360deg); }
+}
+
+@-webkit-keyframes rotateWheelBack {
+    100% { -webkit-transform: rotateZ(-360deg); }
+}
+
+@-moz-keyframes rotateWheelBack {
+    100% { -moz-transform: rotateZ(-360deg); }
+}
+
+@-o-keyframes rotateWheelBack {
+    100% { -o-transform: rotateZ(-360deg); }
+}
+
+@keyframes rotateWheelBack {
+    100% { transform: rotateZ(-360deg); }
+}
