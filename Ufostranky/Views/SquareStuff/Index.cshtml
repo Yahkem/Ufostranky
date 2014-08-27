@@ -1,19 +1,17 @@
-﻿@model Ufostranky.Models.SquareShit
+﻿@model Ufostranky.Models.SquareStuff
 
 @{
     ViewBag.Title = "HraCoNevimJakSeJmenuje";
 }
 
+@* Data only - removed after gets data *@
 <span id="empty">@Model.EmptyCoords[0]-@Model.EmptyCoords[1]</span>
-<div id="mainSquareShit">
+ 
+<div id="mainSquareStuff">
     @for (byte i = 0; i < 15; ++i )
     {
         <div class="field @Model.Positions[i]" data-field="@Model.Positions[i]">@Model.Numbers[i]</div>
     }
-    <audio id="victorySound">
-        <source src="~/Audio/Fireworks.mp3" type="audio/mp3" />
-        <embed height="0" width="0" src="~/Audio/Fireworks.mp3" />
-    </audio>
 </div>
 
 <fieldset id="settings">
@@ -34,9 +32,9 @@
 </fieldset>
 
 @section Scripts{
-    @Scripts.Render("~/Scripts/squareStuff.js")
+    @Scripts.Render("~/bundles/squareStuff")
 }
 
 @section Styles {
-    @Styles.Render("~/Content/squareStuff.css")
+    @Styles.Render("~/Content/squareStuff")
 }

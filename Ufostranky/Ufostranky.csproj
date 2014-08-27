@@ -162,7 +162,7 @@
     <Compile Include="Controllers\GuestbookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SquareShitController.cs" />
+    <Compile Include="Controllers\SquareStuffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,7 +171,7 @@
     <Compile Include="Models\Guestbook.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\SquareShit.cs" />
+    <Compile Include="Models\SquareStuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -239,7 +239,7 @@
     <Content Include="Views\Guestbook\Create.cshtml" />
     <Content Include="Views\Guestbook\Delete.cshtml" />
     <Content Include="Views\Guestbook\Index.cshtml" />
-    <Content Include="Views\SquareShit\Index.cshtml" />
+    <Content Include="Views\SquareStuff\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Ufostranky.Models
 {
-    public class SquareShit
+    public class SquareStuff
     {
         public byte[] Numbers { get; set; }
         public string[] Positions { get; set; }
         public byte[] EmptyCoords { get; set; }
 
-        public SquareShit()
+        public SquareStuff()
         {
             Numbers = new byte[15];
             List<byte> list = new List<byte> { 1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12, 13, 14, 15 };

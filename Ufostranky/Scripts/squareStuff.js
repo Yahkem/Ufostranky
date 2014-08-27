@@ -69,12 +69,12 @@
             $('.f-3-1').text() == 8 && $('.f-3-2').text() == 9 && $('.f-3-3').text() == 10 && $('.f-3-4').text() == 11 &&
             $('.f-4-1').text() == 12 && $('.f-4-2').text() == 13 && $('.f-4-3').text() == 14 && $('.f-4-4').text() == 15))
         {
-            document.getElementById('victorySound').play();
+            new Audio("../Audio/Fireworks.mp3").play();
         }
     };
 
     // main ufo
-    $('#mainSquareShit').on('click', '.clickable', function () {
+    $('#mainSquareStuff').on('click', '.clickable', function () {
         if (!moving)
         {
             var t = $(this),

@@ -3,12 +3,12 @@ using Ufostranky.Models;
 
 namespace Ufostranky.Controllers
 {
-    public class SquareShitController : Controller
+    public class SquareStuffController : Controller
     {
-        // GET: SquareShit
+        // GET: SquareStuff
         public ActionResult Index()
         {
-            SquareShit squares = new SquareShit();
+            SquareStuff squares = new SquareStuff();
 
             return View(squares);
         }

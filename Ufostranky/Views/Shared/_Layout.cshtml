@@ -49,7 +49,7 @@
                         <div id="s14" class="absoluteSquare"></div>
                         <div id="s15" class="absoluteSquare"></div>
                         
-                        @Html.ActionLink(" ", "Index", "SquareShit", null, htmlAttributes: new { @id = "linkSq" })
+                        @Html.ActionLink(" ", "Index", "SquareStuff", null, htmlAttributes: new { @id = "linkSq" })
                     </div>
                 </li>
                 <li>
@@ -72,11 +72,7 @@
     <footer id="mainFooter">
         <p>&copy; @DateTime.Now.Year - PHP používají divoši</p>
     </footer> 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/Scripts/pause.js")
-    @Scripts.Render("~/Scripts/script.js")
+    @Scripts.Render("~/bundles/everypage")
     @RenderSection("scripts", required: false)
 </body>
 </html>
