@@ -21,9 +21,11 @@ namespace Ufostranky.Models
                 Numbers[i] = list[index];
                 list.RemoveAt(index);
             }
+
+            MakePositions();
         }
 
-        public void MakePositions()
+        private void MakePositions()
         {
             bool set = false;
             Random randomizer = new Random();

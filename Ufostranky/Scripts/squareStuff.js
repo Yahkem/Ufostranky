@@ -1,24 +1,26 @@
 ﻿$(document).ready(function () {
 
     // Game----------------------------------------------------------------------------------
-    var getCoords,
-        addClickable,
+    var addClickable,
         removeClickable,
         changeEmpty,
         gameWon,
-        animationSpeed = 300;
+        animationSpeed = 300,
+        emptyCoords;
 
     var moving = false;
 
-    getCoords = function (jQueryObject) {
-        var coords = jQueryObject.attr('id').split("-");
+    // get data from empty
+    (function () {
+        var coords = $('#empty').text().split("-");
 
-        return [parseInt(coords[1]), parseInt(coords[2])];
-    };
+        $('#empty').remove();
+
+        emptyCoords = [parseInt(coords[0]), parseInt(coords[1])];
+    })();
 
     addClickable = function() {
-        var emptyCoords = getCoords($('.empty')),
-            cls,
+        var cls,
             fixedCoord;
         
         // nahore od stavajiciho
@@ -52,9 +54,8 @@
     };
 
     changeEmpty = function (row, col) {
-        $('.empty').removeClass('empty');
-        var cellId = '#c-' + row + '-' + col;
-        $(cellId).addClass('empty');
+        emptyCoords[0] = row;
+        emptyCoords[1] = col;
     };
 
     gameWon = function () {
@@ -86,11 +87,14 @@
 
             moving = true;
 
+            pos[1] = parseInt(pos[1]);
+            pos[2] = parseInt(pos[2]);
+
             switch (t.data('direction')) {
                 case 'up':
                     x = parseInt(t.css('top').replace('px', '')); 
 
-                    row = parseInt(pos[1]) - 1;
+                    row = pos[1] - 1;
                     col = pos[2];
 
                     direction = { 'top': x - 200 };
@@ -100,7 +104,7 @@
                     x = parseInt(t.css('left').replace('px', ''));
 
                     row = pos[1];
-                    col = parseInt(pos[2]) + 1;
+                    col = pos[2] + 1;
 
                     direction = { 'left': x + 200 };
                     break;
@@ -108,7 +112,7 @@
                 case 'down':
                     x = parseInt(t.css('top').replace('px', ''));
 
-                    row = parseInt(pos[1]) + 1;
+                    row = pos[1] + 1;
                     col = pos[2];
 
                     direction = { 'top': x + 200 };
@@ -118,7 +122,7 @@
                     x = parseInt(t.css('left').replace('px', ''));
 
                     row = pos[1],
-                    col = parseInt(pos[2]) - 1;
+                    col = pos[2] - 1;
 
                     direction = { 'left': x - 200 };
                     break;
