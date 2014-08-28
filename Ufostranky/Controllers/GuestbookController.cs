@@ -46,6 +46,11 @@ namespace Ufostranky.Controllers
             return Index();
         }
 
+        public ActionResult Create()
+        {
+            return RedirectToAction("Index");
+        }
+
         // GET: Guestbook/Delete/5
         public ActionResult Delete(int? id)
         {

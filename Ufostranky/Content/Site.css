@@ -30,13 +30,13 @@ input, textarea {
 
 #mainMenu {
     margin: 0 auto;
-    width: 1280px;
+    min-width: 6.5em;
+    max-width: 25em; /* menit tohle */
     clear:both;
 }
 
 #mainMenu ul {
-    float: left;
-    width: 100%;
+    margin: 0 auto;
     list-style-type: none;
 }
 

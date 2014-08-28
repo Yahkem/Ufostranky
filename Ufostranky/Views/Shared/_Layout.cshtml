@@ -30,39 +30,18 @@
                 </li>
                 <li>
                     <div id="squaresAndShit" class="menuDiv">
-                        <div id="s1" class="absoluteSquare"></div>
-                        <div id="s2" class="absoluteSquare"></div>
-                        <div id="s3" class="absoluteSquare"></div>
+                        @for (byte i = 1; i <= 15; ++i)
+                        {
+                            string id = "s" + i;
+                            <div id="@id" class="absoluteSquare"></div>
+                        }
 
-                        <div id="s4" class="absoluteSquare"></div>
-                        <div id="s5" class="absoluteSquare"></div>
-                        <div id="s6" class="absoluteSquare"></div>
-                        <div id="s7" class="absoluteSquare"></div>                    
-                                                
-                        <div id="s8" class="absoluteSquare"></div> 
-                        <div id="s9" class="absoluteSquare"></div>   
-                        <div id="s10" class="absoluteSquare"></div>
-                        <div id="s11" class="absoluteSquare"></div>
-
-                        <div id="s12" class="absoluteSquare"></div>
-                        <div id="s13" class="absoluteSquare"></div>         
-                        <div id="s14" class="absoluteSquare"></div>
-                        <div id="s15" class="absoluteSquare"></div>
-                        
                         @Html.ActionLink(" ", "Index", "SquareStuff", null, htmlAttributes: new { @id = "linkSq" })
                     </div>
                 </li>
-                <li>
-                    <div class="menuDiv"></div>
-                </li>
-                <li>
-                    <div class="menuDiv"></div>
-                </li>
-                <li>
-                    <div class="menuDiv"></div>
-                </li>
             </ul>
         </nav>
+
         <div id="clearer"></div>
         <section id="content">
             @RenderBody()
