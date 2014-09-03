@@ -162,6 +162,7 @@
     <Compile Include="Controllers\GuestbookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MorseController.cs" />
     <Compile Include="Controllers\SquareStuffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,6 +179,7 @@
   <ItemGroup>
     <Content Include="Audio\Fireworks.mp3" />
     <Content Include="Content\guestbook.css" />
+    <Content Include="Content\Morse.css" />
     <Content Include="Content\squareStuff.css" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Global.asax" />
@@ -185,12 +187,14 @@
     <Content Include="Images\ozub.png" />
     <Content Include="Images\ufoattack.jpg" />
     <Content Include="fonts\Backslash.ttf" />
+    <Content Include="fonts\Ethnocentric.ttf" />
     <None Include="Properties\PublishProfiles\Yahkem.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Morse.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pause.js" />
@@ -240,6 +244,7 @@
     <Content Include="Views\Guestbook\Delete.cshtml" />
     <Content Include="Views\Guestbook\Index.cshtml" />
     <Content Include="Views\SquareStuff\Index.cshtml" />
+    <Content Include="Views\Morse\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

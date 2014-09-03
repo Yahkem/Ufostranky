@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Mimozemské ufošifry";
+}
+
+<h2 class="contentHeading">Mimozemské ufošifry</h2>
+
+<textarea id="textInput" class="morseArea" placeholder="Text"></textarea>
+
+<button id="changeInputs" value="toM">F => ..-.</button>
+
+<textarea id="morseInput" class="morseArea" placeholder="Morseovka" readonly></textarea>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/Morse")
+}
+
+@section Styles {
+    @Styles.Render("~/Content/Morse")
+}

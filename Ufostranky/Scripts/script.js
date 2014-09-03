@@ -56,9 +56,11 @@
     // begin Morse
     function getKeyByValue(obj, value) {
         for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
                 if (obj[prop] === value)
                     return prop;
             }
+        }
     }
 
     var codes = {
@@ -73,6 +75,7 @@
 
     $('#morseDiv').on('mouseenter', function () {
         on = true;
+        
         setTimeout(function () {
             if (on) {
                 var letter = $('#morse').text();
@@ -83,6 +86,7 @@
     
     $('#morseDiv').on('mouseleave', function () {
         on = false;
+
         setTimeout(function () {
             if (!on) {
                 var code = $('#morse').text().replace(/·/g, '&middot;');

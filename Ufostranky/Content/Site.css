@@ -52,7 +52,6 @@ input, textarea {
     width: 6.5em;
     height: 6.5em;
     margin: 0.7em 0.5em;
-    float: left;
     position: relative;
     box-sizing: border-box;
 }
@@ -237,13 +236,18 @@ input, textarea {
     position: absolute;
     border: 5px inset silver;
     border-radius: 10px;
-    transition-property: transform;
-    transition-duration: 1s;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -o-transition: transform 1s;
+    transition: transform 1s; 
 }
 
 
 #morseDiv:hover {
-    transform: rotate3d(1, 1, 1, 360deg);
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    -moz-transform: rotate3d(0, 0, 1, 360deg);
+    -o-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
 }
 
 #morse {
@@ -260,7 +264,6 @@ input, textarea {
     width: 100%;
     height: 100%;
 }
-
 /* Not menu */
 
 #clearer {

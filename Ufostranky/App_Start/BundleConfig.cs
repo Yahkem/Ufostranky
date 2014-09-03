@@ -23,6 +23,9 @@ namespace Ufostranky
             bundles.Add(new ScriptBundle("~/bundles/squareStuff").Include(
                         "~/Scripts/squareStuff.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Morse").Include(
+                        "~/Scripts/Morse.js"));
+
             // STYLES
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/Site.css"));
@@ -32,6 +35,9 @@ namespace Ufostranky
 
             bundles.Add(new StyleBundle("~/Content/squareStuff").Include(
                         "~/Content/squareStuff.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Morse").Include(
+                        "~/Content/Morse.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
