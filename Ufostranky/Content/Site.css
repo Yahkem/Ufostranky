@@ -29,10 +29,9 @@ input, textarea {
 /* Menu */
 
 #mainMenu {
-    margin: 0 auto;
-    min-width: 6.5em;
-    max-width: 25em; /* menit tohle */
     clear:both;
+    display: -webkit-flex;
+    display: flex;
 }
 
 #mainMenu ul {
@@ -46,17 +45,22 @@ input, textarea {
     height: 8em;
     text-decoration: none;
     display: inline;
+    position: relative;
 }
 
 .menuDiv {
     width: 6.5em;
     height: 6.5em;
-    margin: 0.5em 0.5em;
-    border: 5px solid rgba(0, 0, 0, 0);
+    margin: 0.7em 0.5em;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
 }
 
 #home {
+    box-sizing: initial;
     background-color: black;
+    border: 5px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
     text-align: center;
     transition-property: background-color;
@@ -106,7 +110,7 @@ input, textarea {
     border-left: 55px solid transparent;
     border-right: 55px solid transparent;
     position: absolute;
-    margin-top: 15px;
+    margin-top: 1em;
 }
 
 #guestbook:hover {
@@ -229,12 +233,40 @@ input, textarea {
     top: -0.1em;
 }
 
+#morseDiv {
+    position: absolute;
+    border: 5px inset silver;
+    border-radius: 10px;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+
+#morseDiv:hover {
+    transform: rotate3d(1, 1, 1, 360deg);
+}
+
+#morse {
+    width: 100%;
+    position: absolute;
+    font-size: 3.3em;
+    line-height: 1.7em;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#morseDiv a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Not menu */
+
 #clearer {
     clear: both; 
     height: 50px;
 }
-
-/* Not menu */
 
 #mainSection {
     min-height: 96%;

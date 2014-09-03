@@ -52,4 +52,45 @@
         )
     }).mouseleave(function () { $(this).siblings().pause(); });
     // end squareMenu
+
+    // begin Morse
+    function getKeyByValue(obj, value) {
+        for (var prop in obj) {
+                if (obj[prop] === value)
+                    return prop;
+            }
+    }
+
+    var codes = {
+        'A': '&middot;-', 'B': '-&middot;&middot;&middot;', 'C': '-&middot;-&middot;', 'D': '-&middot;&middot;', 'E': '&middot;',
+        'F': '&middot;&middot;-&middot;', 'G': '--&middot;', 'H': '&middot;&middot;&middot;&middot;', 'I': '&middot;&middot;', 'J': '&middot;---',
+        'K': '-&middot;-', 'L': '&middot;-&middot;&middot;', 'M': '--', 'N': '-&middot;', 'O': '---', 'P': '&middot;--&middot;', 'Q': '--&middot;-',
+        'R': '&middot;-&middot;', 'S': '&middot;&middot;&middot;', 'T': '-', 'U': '&middot;&middot;-', 'V': '&middot;&middot;&middot;-', 'W': '&middot;--',
+        'X': '-&middot;&middot;-', 'Y': '-&middot;--', 'Z': '--&middot;&middot;'
+    };
+
+    var on = false;
+
+    $('#morseDiv').on('mouseenter', function () {
+        on = true;
+        setTimeout(function () {
+            if (on) {
+                var letter = $('#morse').text();
+                $('#morse').html(codes[letter]);
+            }
+        }, 1000);
+    });
+    
+    $('#morseDiv').on('mouseleave', function () {
+        on = false;
+        setTimeout(function () {
+            if (!on) {
+                var code = $('#morse').text().replace(/·/g, '&middot;');
+                var position = getKeyByValue(codes, code).charCodeAt(0);
+                position = (position == 90) ? 65 : ++position;
+                $('#morse').text(String.fromCharCode(position));
+            }
+        }, 1000);
+    });
+    // end Morse
 });
