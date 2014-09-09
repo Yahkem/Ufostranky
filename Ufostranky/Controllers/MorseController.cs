@@ -9,7 +9,7 @@ namespace Ufostranky.Controllers
     public class MorseController : Controller
     {
         // GET: Morse
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View();
         }

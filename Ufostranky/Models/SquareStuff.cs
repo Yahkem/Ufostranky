@@ -15,7 +15,7 @@ namespace Ufostranky.Models
             List<byte> list = new List<byte> { 1, 2, 3, 4, 5, 6 , 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             Random randomizer = new Random();
 
-            for(byte i = 0; i < 15; ++i)
+            for (byte i = 0; i < 15; ++i)
             {
                 int index = randomizer.Next(0, 15 - i);
                 Numbers[i] = list[index];
@@ -31,21 +31,22 @@ namespace Ufostranky.Models
             Random randomizer = new Random();
             int index = 0;
 
-            this.Positions = new string[15];
-            this.EmptyCoords = new byte[2];
+            Positions = new string[15];
+            EmptyCoords = new byte[2];
 
             for(byte i = 1; i < 5; ++i)
             {
                 for(byte j = 1; j < 5; ++j)
                 {
-                    if (set != true && randomizer.Next(10) == 1 || set != true && i == 4 && j == 4)
+                    if (set != true && (randomizer.Next(9) == 1 || i == 4 && j == 4))
                     {
                         set = true;
                         EmptyCoords[0] = i;
                         EmptyCoords[1] = j;
                         continue;
                     }
-                    Positions[index++] = "f-" + i.ToString() + "-" + j.ToString();
+                    Positions[index] = "f-" + i.ToString() + "-" + j.ToString();
+                    ++index;
                 }
             }
         }

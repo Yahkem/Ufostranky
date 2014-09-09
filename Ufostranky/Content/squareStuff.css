@@ -53,9 +53,9 @@
 
 .clickable:hover {
     -webkit-animation: clickableAnim 2s linear infinite;
-    -moz-animation: clickableAnim 3s linear infinite;
-    -o-animation: clickableAnim 3s linear infinite;
-    animation: clickableAnim 3s linear infinite;
+    -moz-animation: clickableAnim 2s linear infinite;
+    -o-animation: clickableAnim 2s linear infinite;
+    animation: clickableAnim 2s linear infinite;
 }
 
 /* all that horseshit */
@@ -142,7 +142,7 @@
 
 @font-face {
     font-family: ufont;
-    src: url(../fonts/Backslash.ttf);
+    src: url(../Fonts/Backslash.ttf);
 }
 
 @-webkit-keyframes clickableAnim {
@@ -209,6 +209,11 @@
 #speedInput {
     width: 100px;
     text-align: right;
+}
+
+.gameAudio {
+    display: block;
+    margin: 0 auto;
 }
 
 @-webkit-keyframes rotateWheel {

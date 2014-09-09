@@ -6,7 +6,7 @@ namespace Ufostranky.Controllers
     public class SquareStuffController : Controller
     {
         // GET: SquareStuff
-        public ActionResult Index()
+        public ViewResult Index()
         {
             SquareStuff squares = new SquareStuff();
 

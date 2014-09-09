@@ -178,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Audio\Fireworks.mp3" />
+    <Content Include="Audio\The Game.mp3" />
     <Content Include="Content\guestbook.css" />
     <Content Include="Content\Morse.css" />
     <Content Include="Content\squareStuff.css" />
@@ -186,8 +187,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\ozub.png" />
     <Content Include="Images\ufoattack.jpg" />
-    <Content Include="fonts\Backslash.ttf" />
-    <Content Include="fonts\Ethnocentric.ttf" />
+    <Content Include="Fonts\Backslash.ttf" />
+    <Content Include="Fonts\Ethnocentric.ttf" />
     <None Include="Properties\PublishProfiles\Yahkem.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

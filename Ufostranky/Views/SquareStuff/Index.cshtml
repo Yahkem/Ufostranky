@@ -18,6 +18,10 @@
     <legend><img id="settingsWheel" src="~/Images/ozub.png" alt="Settings" width="40" height="40" /></legend>
     <table class ="hideable">
         <tr>
+            <th><label for="color">Barva:</label></th>
+            <td><input id="color" type="color" value="#003264" /></td>
+        </tr>
+        <tr>
             <th><label for="speedInput">Rychlost pohybu dlaždic:</label></th>
             <td>
                 <input id="speedInput" type="number" value="250" />
@@ -25,8 +29,11 @@
             </td>
         </tr>
         <tr>
-            <th><label for="color">Barva:</label></th>
-            <td><input id="color" type="color" value="#003264" /></td>
+            <td colspan="2">
+                <audio class="gameAudio" controls="controls">
+                    <source src="~/Audio/The Game.mp3" type="audio/mp3" />
+                </audio>
+            </td>
         </tr>
     </table>
 </fieldset>

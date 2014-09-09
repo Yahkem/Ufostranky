@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace Ufostranky.Models
 {
@@ -11,10 +12,12 @@ namespace Ufostranky.Models
         public int Id { get; set; }
 
         [Display(Name = "Autor")]
+        [AllowHtml]
         [StringLength(75, ErrorMessage = "Jestli máš jméno delší, než 75 znaků, jdi <a href='https://answers.yahoo.com/question/index?qid=20090620204026AAwdHzf'>sem</a>")]
         public string Author { get; set; }
 
         [Required(ErrorMessage = "Musíte zadat text příspěvku")]
+        [AllowHtml]
         [StringLength(1000, ErrorMessage = "Ty se opovažuješ zadat text delší, než 1000 znaků?!")]
         public string Text { get; set; }
 

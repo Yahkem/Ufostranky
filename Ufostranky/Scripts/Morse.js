@@ -11,6 +11,7 @@
         }
     }
 
+    // zmen barvu textarea ktera je zrovna readonly
     function setReadOnlyBackground () {
         var morseInput = $('#morseInput');
         var color = 'lightgrey';
@@ -30,41 +31,48 @@
         'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
         'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
         'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
-        '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----', ' ': ' '
+        '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----',
+        ' ': '/', '\n': '\n'
     };
 
+    // TEXT
     $('#content').on('keyup', '#textInput', function () {
-        var txt = $(this).val(),
-            result = '';
+        if (!$(this).prop('readonly')) {
+            var txt = $(this).val(),
+                result = '';
 
-        for (var i = 0; i < txt.length; ++i) {
-            if (txt[i] == '\n') {
-                result += '\n';
-            } else {
-                var letter = codes[txt[i].toUpperCase()];
-                result += (typeof letter === "undefined") ? '[?]' : letter + ' ';
+            for (var i = 0; i < txt.length; ++i) {
+                if (txt[i] == '\n') {
+                    result += '\n';
+                } else {
+                    var letter = codes[txt[i].toUpperCase()];
+                    result += (typeof letter === "undefined") ? '[?]' : (letter == '/')? letter : letter + '/';
+                }
             }
-        }
 
-        $('#morseInput').val(result);
+            $('#morseInput').val(result);
+        }
     });
     
+    // MORSE
     $('#content').on('keyup', '#morseInput', function () {
-        var morseTxt = $(this).val(),
-            words = morseTxt.split(/\s/),
-            result = '';
-        
-        if (!(words.length === 1 && words[0] == '')) {  
-            for (var i = 0; i < words.length; ++i) {
-                var end = '',
-                    key;
+        if (!$(this).prop('readonly')) {
+            var morseTxt = $(this).val(),
+                words = morseTxt.replace(/\n/g, ' \n ').split('/'),
+                result = '';
 
-                key = getKeyByValue(codes, words[i]);
-                result += (typeof key == "undefined") ? '[?]' : key + end;
+            //  if kvuli jebani placeholderu pri vymazani
+            if (!(words.length === 1 && words[0] == '')) {
+                for (var i = 0; i < words.length; ++i) {
+                    var key;
+
+                    key = getKeyByValue(codes, words[i]);
+                    result += (typeof key == "undefined") ? '[?]' : key;
+                }    
             }
-        }
 
-        $('#textInput').val(result);
+            $('#textInput').val(result);
+        }
     });
 
     function switchAreas (before, after, ref) {
