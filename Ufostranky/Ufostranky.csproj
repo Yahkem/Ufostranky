@@ -170,9 +170,14 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Guestbook.cs" />
+    <Compile Include="Models\IDE.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OS.cs" />
+    <Compile Include="Models\Paradigm.cs" />
+    <Compile Include="Models\ProgrammingLanguage.cs" />
     <Compile Include="Models\SquareStuff.cs" />
+    <Compile Include="Models\TypingDiscipline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

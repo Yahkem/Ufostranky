@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Ufostranky.Models
 {
@@ -29,6 +31,16 @@ namespace Ufostranky.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Ufostranky.Models.Guestbook> Guestbook { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
+
+        public DbSet<Guestbook> Guestbook { get; set; }
+        public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
+        public DbSet<Paradigm> Paradigms { get; set; }
+        public DbSet<TypingDiscipline> TypingDisciplines { get; set; }
+        public DbSet<IDE> IDEs { get; set; }
+        public DbSet<OS> OperatingSystems { get; set; }
     }
 }
