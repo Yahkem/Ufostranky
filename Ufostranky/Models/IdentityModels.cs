@@ -33,6 +33,8 @@ namespace Ufostranky.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
@@ -41,6 +43,6 @@ namespace Ufostranky.Models
         public DbSet<Paradigm> Paradigms { get; set; }
         public DbSet<TypingDiscipline> TypingDisciplines { get; set; }
         public DbSet<IDE> IDEs { get; set; }
-        public DbSet<OS> OperatingSystems { get; set; }
+        public DbSet<Article> Articles { get; set; }
     }
 }

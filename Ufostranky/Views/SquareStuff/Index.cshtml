@@ -7,16 +7,9 @@
 @* Data only - removed after gets data *@
 <span id="empty">@Model.EmptyCoords[0]-@Model.EmptyCoords[1]</span>
  
-<div id="mainSquareStuff">
-    @for (byte i = 0; i < 15; ++i )
-    {
-        <div class="field @Model.Positions[i]" data-field="@Model.Positions[i]">@Model.Numbers[i]</div>
-    }
-</div>
-
 <fieldset id="settings">
     <legend><img id="settingsWheel" src="~/Images/ozub.png" alt="Settings" width="40" height="40" /></legend>
-    <table class ="hideable">
+    <table class="hideable">
         <tr>
             <th><label for="color">Barva:</label></th>
             <td><input id="color" type="color" value="#003264" /></td>
@@ -29,6 +22,10 @@
             </td>
         </tr>
         <tr>
+            <th><label for="musicYes">Hrát hudbu po spuštění:</label></th>
+            <td><input type="checkbox" id="musicYes" /></td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <audio class="gameAudio" controls="controls">
                     <source src="~/Audio/The Game.mp3" type="audio/mp3" />
@@ -37,6 +34,13 @@
         </tr>
     </table>
 </fieldset>
+
+<div id="mainSquareStuff">
+    @for (byte i = 0; i < 15; ++i )
+    {
+        <div class="field @Model.Positions[i]" data-field="@Model.Positions[i]">@Model.Numbers[i]</div>
+    }
+</div>
 
 @section Scripts{
     @Scripts.Render("~/bundles/squareStuff")

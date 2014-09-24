@@ -1,7 +1,14 @@
 ﻿$(document).ready(function () {
 
     // Game----------------------------------------------------------------------------------
-    
+    /*(function checkMusicBox() {
+        if (localStorage.getItem("motorheadOnStart") !== "false") {
+            document.getElementById('gameAudio').play();
+
+            $('#musicYes').prop('checked', true);
+        }
+    })();*/
+
     (function game() {
         var addClickable,
             removeClickable,
@@ -162,6 +169,13 @@
 
             if (!rotating) {
                 rotating = true;
+
+                // delete - testing nums of settings children
+                var decka = $('#settings').children().length();
+                
+
+                alert(decka);
+
 
                 if (!t.hasClass('openedWheel')) {
                     t.removeClass('closedWheel');

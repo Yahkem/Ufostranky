@@ -4,44 +4,58 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ufostranky.Models
 {
-    public class ProgrammingLanguage
+    public class ProgrammingLanguage : IName
     {
         public int ID { get; set; }
 
-        [Required, StringLength(100)]
+        [Required(ErrorMessage = "Required"), StringLength(100, ErrorMessage = "Max 100 chars")]
         public string Name { get; set; }
 
-        [DataType(DataType.Date), Display(Name = "Appeared")]
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [StringLength(50, ErrorMessage = "Max 50")]
         public string Appeared { get; set; }
 
-        [Display(Name = "Creator(s)")]
-        public string[] Creators { get; set; }
+        [Display(Name = "Creator(s)"), StringLength(300, ErrorMessage = "Max 300")]
+        public string Creators { get; set; }
 
-        public string Developer { get; set; }
+        [Display(Name = "Current developer"), StringLength(100, ErrorMessage = "Max 100 chars")]
+        public string CurrentDeveloper { get; set; }
 
-        [Display(Name = "Latest Version"), StringLength(50)]
+        [Display(Name = "Latest version"), StringLength(50)]
         public string LatestVersion { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime LatestVersionDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd. MM. yyyy}")]
+        [Display(Name = "Date of latest verion")]
+        public DateTime? LatestVersionDate { get; set; }
 
-        [Display(Name = "Code Sample")]
-        public string CodeSample { get; set; }
+        [StringLength(250)]
+        public string Usage { get; set; }
 
-        [Display(Name = "")]
-        public string UsedIn { get; set; }
+        // M:N
+        public virtual ICollection<TypingDiscipline> TypingDisciplines { get; set; }
+        public virtual ICollection<Paradigm> Paradigms { get; set; }
+        public virtual ICollection<IDE> IDEs { get; set; }
+        public virtual ICollection<ProgrammingLanguage> InfluencedBy { get; set; }
+        public virtual ICollection<ProgrammingLanguage> Influenced { get; set; }
 
-        [Required(ErrorMessage = "TypingDiscipline Required")]
-        public ICollection<TypingDiscipline> TypingDisciplines { get; set; }
+        // DateDisplay
+        public string LatestVersionDateDisplay 
+        {
+            get
+            {
+                if (LatestVersionDate.HasValue)
+                {
+                    string day = LatestVersionDate.Value.Day.ToString();
+                    string month = LatestVersionDate.Value.Month.ToString();
+                    string year = LatestVersionDate.Value.Year.ToString();
 
-        [Required(ErrorMessage = "Paradigm Required")]
-        public ICollection<Paradigm> Paradigms { get; set; }
-
-        public ICollection<IDE> IDEs { get; set; } 
-
-        public ICollection<ProgrammingLanguage> InfluencedBy { get; set; }
-        public ICollection<ProgrammingLanguage> Influenced { get; set; }
+                    return String.Format("{0}. {1}. {2}", day, month, year);
+                }
+                else
+                {
+                    return String.Empty;
+                }
+            }
+        }
     }
 }

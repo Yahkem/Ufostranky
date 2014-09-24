@@ -17,6 +17,7 @@ body {
     background-position: top center; 
     background-repeat: no-repeat;
     background-color: black;
+    background-attachment: fixed;
 }
 
 input, textarea {
@@ -315,11 +316,22 @@ input, textarea {
     position: relative;
 }
 
+.back {
+    font-size: 1em;
+}
+
 /* zatim jenom v guestbook */
 .hidingArrow {
     float: right;
     cursor: pointer;
 }
+
+/* Bootstrap classes */
+
+.text-danger {
+    color: red;
+}
+
 
 /* Animations & rules */
 
