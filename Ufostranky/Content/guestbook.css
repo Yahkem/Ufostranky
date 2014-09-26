@@ -15,6 +15,7 @@
 .gbPost {
     width: 100%;
     min-height: 20px;
+    padding-top: 5px;
 }
 
 .blackLine {
@@ -24,4 +25,16 @@
 
 .author {
     font-weight: bold;
+}
+
+.delete {
+    color: red;
+    text-decoration: none;
+    float: right;
+    font-size: 0.5em;
+    margin-right: 10px;
+}
+
+.delete:hover {
+    text-decoration: line-through;
 }

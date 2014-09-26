@@ -4,7 +4,7 @@ namespace Ufostranky.Models
 {
     public class IDE : IName
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Required"), Display(Name = "IDE")]
         [StringLength(100, ErrorMessage = "Max 100")]

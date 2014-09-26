@@ -170,20 +170,15 @@
             if (!rotating) {
                 rotating = true;
 
-                // delete - testing nums of settings children
-                var decka = $('#settings').children().length();
+                var tableChildrenCount = $('.hideable').children().children().length;  
                 
-
-                alert(decka);
-
-
                 if (!t.hasClass('openedWheel')) {
                     t.removeClass('closedWheel');
                     t.addClass('openedWheel');
                     settings.css({ border: 0, 'border-top': border });
                     settings.animate({ width: 800 }, speed, 'linear', function () {
                         settings.css({ border: border });
-                        settings.animate({ height: 170 }, speed, 'linear', function () {
+                        settings.animate({ height: tableChildrenCount * 50 }, speed, 'linear', function () {
                             $('.hideable').fadeIn(speed);
                             rotating = false;
                         });

@@ -1,5 +1,6 @@
 ﻿@model Ufostranky.Models.Guestbook
 
+@if (!User.Identity.IsAuthenticated) { 
 <div>
     @Html.LabelFor(model => model.Author)
     <div>
@@ -7,6 +8,7 @@
         @Html.ValidationMessageFor(model => model.Author, "")
     </div>
 </div>
+}
 
 <div>
     @Html.LabelFor(model => model.Text)

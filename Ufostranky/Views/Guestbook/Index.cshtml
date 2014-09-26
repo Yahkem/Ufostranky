@@ -19,10 +19,13 @@
             <p class="gbText hide">
                 @Html.DisplayFor(modelItem => item.Text)
             </p>
-             @*ADMIN
-            <span>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</span>
-            *@
+
             <span class="gbCreated hide">@Html.DisplayFor(modelItem => item.Created)</span>
+
+            @if (User.IsInRole("admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "delete hide" })
+            }         
             <hr class="clear" />
         </div>
     }
@@ -36,7 +39,7 @@
 
     <hr class="blackLine"/>
     <div>
-        @{Html.RenderPartial("Create", new Ufostranky.Models.Guestbook());}
+        @{ Html.RenderPartial("Create", new Ufostranky.Models.Guestbook()); }
     </div>
 }
 

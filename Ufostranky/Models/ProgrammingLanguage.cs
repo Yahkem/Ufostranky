@@ -6,7 +6,7 @@ namespace Ufostranky.Models
 {
     public class ProgrammingLanguage : IName
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Required"), StringLength(100, ErrorMessage = "Max 100 chars")]
         public string Name { get; set; }

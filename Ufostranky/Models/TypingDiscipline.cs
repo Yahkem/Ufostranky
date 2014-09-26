@@ -4,7 +4,7 @@ namespace Ufostranky.Models
 {
     public class TypingDiscipline : IName
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Required"), Display(Name = "Typing Discipline")]
         [StringLength(50, ErrorMessage = "Max 50")]

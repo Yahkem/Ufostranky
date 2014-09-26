@@ -30,7 +30,12 @@ namespace Ufostranky.Controllers
                 guestbook.Created = DateTime.Now;
 
                 if (guestbook.Author == null)
-                    guestbook.Author = "Smradlavý anonym";
+                {
+                    if (User.Identity.IsAuthenticated)
+                        guestbook.Author = User.Identity.Name;
+                    else
+                        guestbook.Author = "Smradlavý anonym";
+                }
 
                 db.Guestbook.Add(guestbook);
                 await db.SaveChangesAsync();
@@ -45,6 +50,7 @@ namespace Ufostranky.Controllers
         }
 
         // GET: Guestbook/Delete/5
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -60,6 +66,7 @@ namespace Ufostranky.Controllers
         }
 
         // POST: Guestbook/Delete/5
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<RedirectToRouteResult> DeleteConfirmed(int id)

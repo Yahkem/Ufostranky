@@ -9,9 +9,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/Images/favicon.ico")" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", false)
 </head>
 <body>
+    @{ Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml"); }
     <section id="mainSection">
         <nav id="mainMenu">
             <ul>
@@ -48,6 +50,8 @@
                         @Html.ActionLink(" ", "Index", "Morse")
                     </div>                  
                 </li>
+                @if (User.IsInRole("admin"))
+                { 
                 <li>
                     <div class="menuDiv">
                         @Html.ActionLink("Programming", "Index", "ProgrammingLanguage")
@@ -55,9 +59,10 @@
                 </li>
                 <li>
                     <div class="menuDiv">
-                        @Html.ActionLink("kuscak", "Index", "Article")
+                        @Html.ActionLink("kuscak", "Index", "Article") @* change controller - article == api *@
                     </div>
                 </li>
+                }
             </ul>
         </nav>
 

@@ -27,6 +27,38 @@ input, textarea {
     background-color: rgba(255, 255, 255, 0);
 }
 
+/* Login */
+
+.login {
+    position: fixed;
+    padding-top: 0.5%;
+    padding-left: 2%;
+}
+
+
+@media (max-width: 1000px ) {
+    .login {
+        position: static;
+    }
+}
+
+.authLink:link {
+    color: silver;
+    text-decoration: none;
+}
+
+.authLink:visited {
+    color: grey;
+}
+
+.authLink:hover {
+    text-decoration: underline;
+}
+
+.authLink:active {
+    color: white;
+}
+
 /* Menu */
 
 #mainMenu {
@@ -331,7 +363,6 @@ input, textarea {
 .text-danger {
     color: red;
 }
-
 
 /* Animations & rules */
 

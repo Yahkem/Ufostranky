@@ -45,7 +45,7 @@ namespace Ufostranky.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != article.ID)
+            if (id != article.Id)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace Ufostranky.Controllers
             db.Articles.Add(article);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = article.ID }, article);
+            return CreatedAtRoute("DefaultApi", new { id = article.Id }, article);
         }
 
         // DELETE: api/Article/5
@@ -113,7 +113,7 @@ namespace Ufostranky.Controllers
 
         private bool ArticleExists(int id)
         {
-            return db.Articles.Count(e => e.ID == id) > 0;
+            return db.Articles.Count(e => e.Id == id) > 0;
         }
     }
 }

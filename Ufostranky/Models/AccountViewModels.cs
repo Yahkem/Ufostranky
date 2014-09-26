@@ -49,9 +49,9 @@ namespace Ufostranky.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [StringLength(100, ErrorMessage = "Max. 100 characters for username")]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

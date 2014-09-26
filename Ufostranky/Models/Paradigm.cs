@@ -4,7 +4,7 @@ namespace Ufostranky.Models
 {
     public class Paradigm : IName
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Required"), Display(Name = "Paradigm")]
         [StringLength(50, ErrorMessage = "Max 50")]

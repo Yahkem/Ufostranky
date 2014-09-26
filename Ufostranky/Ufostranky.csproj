@@ -182,6 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminRoleController.cs" />
     <Compile Include="Controllers\ApiControllers\ArticleController.cs" />
     <Compile Include="Controllers\GuestbookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -195,45 +196,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201409091547506_ProgrammingStuff.cs" />
-    <Compile Include="Migrations\201409091547506_ProgrammingStuff.Designer.cs">
-      <DependentUpon>201409091547506_ProgrammingStuff.cs</DependentUpon>
+    <Compile Include="Migrations\201409260823252_AuthorIDIntToString.cs" />
+    <Compile Include="Migrations\201409260823252_AuthorIDIntToString.Designer.cs">
+      <DependentUpon>201409260823252_AuthorIDIntToString.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201409092020091_ChangeOS.cs" />
-    <Compile Include="Migrations\201409092020091_ChangeOS.Designer.cs">
-      <DependentUpon>201409092020091_ChangeOS.cs</DependentUpon>
+    <Compile Include="Migrations\201409260830052_CreateDummyUsers.cs" />
+    <Compile Include="Migrations\201409260830052_CreateDummyUsers.Designer.cs">
+      <DependentUpon>201409260830052_CreateDummyUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201409180741136_ChangeSomeNames.cs" />
-    <Compile Include="Migrations\201409180741136_ChangeSomeNames.Designer.cs">
-      <DependentUpon>201409180741136_ChangeSomeNames.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409180747086_BlablaChange.cs" />
-    <Compile Include="Migrations\201409180747086_BlablaChange.Designer.cs">
-      <DependentUpon>201409180747086_BlablaChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409180811125_DeleteOS.cs" />
-    <Compile Include="Migrations\201409180811125_DeleteOS.Designer.cs">
-      <DependentUpon>201409180811125_DeleteOS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409180904132_AddCreators.cs" />
-    <Compile Include="Migrations\201409180904132_AddCreators.Designer.cs">
-      <DependentUpon>201409180904132_AddCreators.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409181135367_BagOfShit.cs" />
-    <Compile Include="Migrations\201409181135367_BagOfShit.Designer.cs">
-      <DependentUpon>201409181135367_BagOfShit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409181143343_BigBagOfShit.cs" />
-    <Compile Include="Migrations\201409181143343_BigBagOfShit.Designer.cs">
-      <DependentUpon>201409181143343_BigBagOfShit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409181213243_JustTrying.cs" />
-    <Compile Include="Migrations\201409181213243_JustTrying.Designer.cs">
-      <DependentUpon>201409181213243_JustTrying.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409231302396_Kuscak.cs" />
-    <Compile Include="Migrations\201409231302396_Kuscak.Designer.cs">
-      <DependentUpon>201409231302396_Kuscak.cs</DependentUpon>
+    <Compile Include="Migrations\201409260905445_whoops.cs" />
+    <Compile Include="Migrations\201409260905445_whoops.Designer.cs">
+      <DependentUpon>201409260905445_whoops.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -320,7 +293,6 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Morse.js" />
     <Content Include="Scripts\script.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pause.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\guestbook.js" />
@@ -391,41 +363,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminRole\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409091547506_ProgrammingStuff.resx">
-      <DependentUpon>201409091547506_ProgrammingStuff.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409260823252_AuthorIDIntToString.resx">
+      <DependentUpon>201409260823252_AuthorIDIntToString.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409092020091_ChangeOS.resx">
-      <DependentUpon>201409092020091_ChangeOS.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409260830052_CreateDummyUsers.resx">
+      <DependentUpon>201409260830052_CreateDummyUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409180741136_ChangeSomeNames.resx">
-      <DependentUpon>201409180741136_ChangeSomeNames.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409180747086_BlablaChange.resx">
-      <DependentUpon>201409180747086_BlablaChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409180811125_DeleteOS.resx">
-      <DependentUpon>201409180811125_DeleteOS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409180904132_AddCreators.resx">
-      <DependentUpon>201409180904132_AddCreators.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409181135367_BagOfShit.resx">
-      <DependentUpon>201409181135367_BagOfShit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409181143343_BigBagOfShit.resx">
-      <DependentUpon>201409181143343_BigBagOfShit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409181213243_JustTrying.resx">
-      <DependentUpon>201409181213243_JustTrying.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409231302396_Kuscak.resx">
-      <DependentUpon>201409231302396_Kuscak.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409260905445_whoops.resx">
+      <DependentUpon>201409260905445_whoops.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
