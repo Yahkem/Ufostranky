@@ -50,8 +50,8 @@
                         @Html.ActionLink(" ", "Index", "Morse")
                     </div>                  
                 </li>
-                @if (User.IsInRole("admin"))
-                { 
+
+                @if (User.IsInRole("admin")) { 
                 <li>
                     <div class="menuDiv">
                         @Html.ActionLink("Programming", "Index", "ProgrammingLanguage")
@@ -63,6 +63,7 @@
                     </div>
                 </li>
                 }
+                
             </ul>
         </nav>
 

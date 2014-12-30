@@ -1,13 +1,16 @@
 ﻿$(document).ready(function () {
 
-    // Game----------------------------------------------------------------------------------
-    /*(function checkMusicBox() {
-        if (localStorage.getItem("motorheadOnStart") !== "false") {
+    // Game---------------------------------------------------------------------------------
+    // TODO music on start
+    
+    (function playOrNot() {
+        if (localStorage.getItem("ufostrankyMotorheadOnStart") === "true") {
             document.getElementById('gameAudio').play();
 
             $('#musicYes').prop('checked', true);
         }
-    })();*/
+    })();
+
 
     (function game() {
         var addClickable,
@@ -222,6 +225,18 @@
             }
 
             $('#colorChange').html(result)
+        });
+
+        $('#musicYes').on('change', function () {
+            if (typeof Storage !== "undefined") {
+                if ($(this).prop('checked')) {
+                    localStorage.setItem("ufostrankyMotorheadOnStart", "true");
+                } else {
+                    localStorage.setItem("ufostrankyMotorheadOnStart", "false");
+                }
+            } else {
+                alert('Váš prohlížeč nepodporuje Web Storage, tato změna nebude mít žádný vliv');
+            }
         });
     })();
 });

@@ -12,10 +12,12 @@ namespace Ufostranky
                         "~/Scripts/respond.min.js",
                         "~/Scripts/pause.js",             
                         "~/Scripts/jquery-ui.min-1.11.1.js",
-                        "~/Scripts/jquery.unobtrusive-ajax.min.js",
-                        "~/Scripts/jquery.validate.min.js",
-                        "~/Scripts/jquery.validate.unobtrusive.min.js",
+                        "~/Scripts/jquery.unobtrusive-ajax.min.js",   
                         "~/Scripts/script.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-2.8.3.js"));
 

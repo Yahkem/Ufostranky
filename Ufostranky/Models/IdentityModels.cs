@@ -44,5 +44,7 @@ namespace Ufostranky.Models
         public DbSet<TypingDiscipline> TypingDisciplines { get; set; }
         public DbSet<IDE> IDEs { get; set; }
         public DbSet<Article> Articles { get; set; }
+
+        //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

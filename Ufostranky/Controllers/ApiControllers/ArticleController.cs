@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -20,7 +16,7 @@ namespace Ufostranky.Controllers
         // GET: api/Article
         public IQueryable<Article> GetArticles()
         {
-            return db.Articles;
+           return db.Articles;
         }
 
         // GET: api/Article/5
@@ -32,7 +28,7 @@ namespace Ufostranky.Controllers
             {
                 return NotFound();
             }
-
+            
             return Ok(article);
         }
 
@@ -64,7 +60,7 @@ namespace Ufostranky.Controllers
                 }
                 else
                 {
-                    throw;
+                    throw new DbUpdateException("sry what? how?");
                 }
             }
 
